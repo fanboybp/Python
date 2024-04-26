@@ -13,7 +13,7 @@ X = df[['Length', 'Diam', 'Height', 'Whole', 'Shucked', 'Viscera', 'Shell']]  # 
 y = df['Rings']  # Nhãn
 
 # Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 # Xây dựng và huấn luyện mô hình hồi quy tuyến tính
 model = LinearRegression()
@@ -25,9 +25,9 @@ mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 medae = median_absolute_error(y_test, y_pred)
 
-print("Mean Absolute Error:", mae)  #sai số tuyệt đối trung bình
-print("Mean Squared Error:", mse)   #Sai số bình phương trung bình
-print("Median Absolute Error:", medae) #Sai số tuyệt đối trung vị
+print("Mean Absolute Error:", mae)  
+print("Mean Squared Error:", mse)   
+print("Median Absolute Error:", medae) 
 # Tạo DataFrame từ các giá trị tối thiểu, tối đa và trung bình
 summary_table = pd.DataFrame({'Min': df.min(), 'Max': df.max(), 'Mean': df.mean()}, index=['Length', 'Diam', 'Height', 'Whole', 'Shucked', 'Viscera', 'Shell', 'Rings'])
 
