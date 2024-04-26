@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 # Đọc dữ liệu từ file Abalone.data vào một DataFrame
 df=pd.read_csv('E:\\Python\\Python\\PYTHON\\Kiem_tra\\Bai_1\\Abalone.data')
 df.drop(['Sex'], axis=1, inplace=True) # bỏ cột Sex
-# Chuẩn bị dữ liệu cho việc uấn luyện mô hình
-X = df[['Length', 'Diam', 'Height', 'Whole', 'Shucked', 'Viscera', 'Shell']]  # Đặc trưng
+
+X = df[['Length', 'Diam', 'Height', 'Whole', 'Shucked', 'Viscera', 'Shell']]  
 y = df['Rings']  # Nhãn
 
 # Chia dữ liệu thành tập huấn luyện và tập kiểm tra
@@ -28,7 +28,7 @@ medae = median_absolute_error(y_test, y_pred)
 print("Mean Absolute Error:", mae)  
 print("Mean Squared Error:", mse)   
 print("Median Absolute Error:", medae) 
-# Tạo DataFrame từ các giá trị tối thiểu, tối đa và trung bình
+
 summary_table = pd.DataFrame({'Min': df.min(), 'Max': df.max(), 'Mean': df.mean()}, index=['Length', 'Diam', 'Height', 'Whole', 'Shucked', 'Viscera', 'Shell', 'Rings'])
 
 # Hiển thị bảng với các thuộc tính nằm theo hàng ngang
